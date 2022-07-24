@@ -38,6 +38,9 @@ void setup()
 void loop()
 {
 
+  Serial.printf("Info: Old ID: %d\r\n",id);
+  Serial.printf("Info: New ID: %d\r\n",new_id);
+
   int8_t _response_id;
   _response_id = mcu.PZEM_003_SetAddress(id,new_id);
 
@@ -51,6 +54,6 @@ void loop()
     Serial.printf("Error: can't change address\r\n");
   }
 
-  vTaskDelay(5000);
+  while(1);
 
 }
